@@ -29,7 +29,7 @@ class GenerativeAISample extends StatelessWidget {
       ),
       home: const ChatScreen(
         title: 'Detector de biodiversidad',
-        apiKey: "AIzaSyBVplqZNjrF9XrxkB9vQ5aVYgRim1RI0jk",
+        apiKey: "",
       ),
     );
   }
@@ -116,6 +116,12 @@ class _ChatWidgetState extends State<ChatWidget> {
       apiKey: widget.apiKey,
     );
     _chat = _model.startChat();
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
   }
 
   @override
